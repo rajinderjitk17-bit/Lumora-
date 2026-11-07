@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMORA® — Find the moments worth remembering.</title>
+  <meta name="description" content="LUMORA is a digital travel journal and curated discovery platform for concerts, secret exhibitions, intimate dinners, and real-world cultural experiences.">
+  <meta name="theme-color" content="#F4F0E6">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LUMORA® — Find the moments worth remembering.">
+  <meta property="og:description" content="Digital travel journal & curated real-world experiences platform.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="journal">
+  <!-- Tactile Paper Grain Overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Cursor Follower for Moods & Interactive Elements -->
+  <div class="custom-cursor" id="custom-cursor" aria-hidden="true"></div>
+
+  <!-- Top Technical Marquee Strip -->
+  <div class="edition-strip">
+    <div class="strip-track">
+      <span class="strip-item">EDITION 04 / AUTUMN-WINTER 2026</span>
+      <span class="strip-divider">·</span>
+      <span class="strip-item">CHANDIGARH · DELHI · MUMBAI · BANGALORE · JAIPUR · AMRITSAR</span>
+      <span class="strip-divider">·</span>
+      <span class="strip-item">LIMITED RUN EVENT PASSES RELEASED WEEKLY</span>
+      <span class="strip-divider">·</span>
+      <span class="strip-item">DIGITAL TRAVEL JOURNAL &amp; PASSPORT ARCHIVE</span>
+      <span class="strip-divider">·</span>
+      <span class="strip-item">EDITION 04 / AUTUMN-WINTER 2026</span>
+      <span class="strip-divider">·</span>
+      <span class="strip-item">CHANDIGARH · DELHI · MUMBAI · BANGALORE · JAIPUR · AMRITSAR</span>
+      <span class="strip-divider">·</span>
+      <span class="strip-item">LIMITED RUN EVENT PASSES RELEASED WEEKLY</span>
+      <span class="strip-divider">·</span>
+      <span class="strip-item">DIGITAL TRAVEL JOURNAL &amp; PASSPORT ARCHIVE</span>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="site-header" id="navbar">
+    <div class="header-inner">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="LUMORA Home">
+        <span class="brand-text">LUMORA<sup class="brand-reg">®</sup></span>
+        <span class="brand-sub">JOURNAL &amp; EXPEDITIONS</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">DISCOVER</a>
+        <a href="#weekend" class="nav-link">WEEKEND</a>
+        <a href="#experiences" class="nav-link">EXPERIENCES</a>
+        <a href="#cities" class="nav-link">CITIES</a>
+        <a href="#passport" class="nav-link passport-nav-link">
+          <span>MY PASSPORT</span>
+          <span class="passport-badge" id="passport-count-badge">5</span>
+        </a>
+        <a href="#gallery" class="nav-link">ARCHIVE</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <!-- Bookmark quick drawer trigger -->
+        <button type="button" class="btn-saved-drawer" id="open-saved-btn" aria-label="Open saved experiences drawer">
+          <span class="saved-icon" aria-hidden="true">★</span>
+          <span class="saved-label">SAVED</span>
+          <span class="saved-count-pill" id="saved-count-badge">0</span>
+        </button>
+
+        <!-- Create Experience button -->
+        <button type="button" class="btn-create-header" id="open-create-modal-btn">
+          <span class="plus-sign">+</span> CREATE EXPERIENCE
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-toggle-btn" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Navigation Menu -->
+  <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <span class="mobile-brand">LUMORA®</span>
+        <button type="button" class="mobile-close-btn" id="mobile-close" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile-meta-tag">EDITION 04 · DISPATCH FROM THE FIELD</div>
+
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-item" data-number="01">
+          <span class="item-num">01</span>
+          <span class="item-text">DISCOVER</span>
+        </a>
+        <a href="#weekend" class="mobile-nav-item" data-number="02">
+          <span class="item-num">02</span>
+          <span class="item-text">THIS WEEKEND</span>
+        </a>
+        <a href="#moods" class="mobile-nav-item" data-number="03">
+          <span class="item-num">03</span>
+          <span class="item-text">MOOD INDEX</span>
+        </a>
+        <a href="#experiences" class="mobile-nav-item" data-number="04">
+          <span class="item-num">04</span>
+          <span class="item-text">ALL EXPERIENCES</span>
+        </a>
+        <a href="#cities" class="mobile-nav-item" data-number="05">
+          <span class="item-num">05</span>
+          <span class="item-text">CITY CARTOGRAPHY</span>
+        </a>
+        <a href="#passport" class="mobile-nav-item" data-number="06">
+          <span class="item-num">06</span>
+          <span class="item-text">MY PASSPORT</span>
+          <span class="mobile-badge" id="mobile-passport-count">5 STAMPS</span>
+        </a>
+        <a href="#gallery" class="mobile-nav-item" data-number="07">
+          <span class="item-num">07</span>
+          <span class="item-text">FIELD GALLERY</span>
+        </a>
+        <a href="#creators" class="mobile-nav-item" data-number="08">
+          <span class="item-num">08</span>
+          <span class="item-text">THE CREATORS</span>
+        </a>
+      </nav>
+
+      <div class="mobile-menu-footer">
+        <button type="button" class="btn-create-mobile" id="mobile-create-trigger">
+          + CREATE YOUR EXPERIENCE
+        </button>
+        <div class="mobile-footer-coords">
+          <span>LAT 30.7333° N · LON 76.7794° E</span>
+          <span>AUTUMN / WINTER 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Saved Experiences Drawer -->
+  <aside class="saved-drawer" id="saved-drawer" aria-hidden="true" role="dialog" aria-labelledby="saved-drawer-title">
+    <div class="drawer-header">
+      <div>
+        <span class="drawer-pretitle">YOUR PERSONAL SELECTION</span>
+        <h2 class="drawer-title" id="saved-drawer-title">SAVED EXPERIENCES</h2>
+      </div>
+      <button type="button" class="drawer-close-btn" id="close-saved-drawer" aria-label="Close saved drawer">✕</button>
+    </div>
+
+    <div class="drawer-content" id="saved-drawer-content">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <div class="drawer-footer">
+      <div class="drawer-total-wrap">
+        <span class="drawer-count-info" id="saved-drawer-count">0 items saved</span>
+      </div>
+      <button type="button" class="btn-clear-saved" id="clear-all-saved">CLEAR SAVED</button>
+    </div>
+  </aside>
+  <div class="drawer-backdrop" id="saved-backdrop"></div>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main id="main-content">
+
+    <!-- 00. HERO SECTION (Magazine Cover Asymmetrical Layout) -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        
+        <!-- Left Editorial Column -->
+        <div class="hero-content">
+          <div class="hero-tag-wrap">
+            <span class="hero-label-bracket">[</span>
+            <span class="hero-label-text">YOUR CITY IS FULL OF STORIES</span>
+            <span class="hero-label-bracket">]</span>
+            <span class="hero-edition-tag">№ 004 / 2026</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-title-line">FIND SOMETHING</span>
+            <span class="hero-title-line italic-accent">WORTH</span>
+            <span class="hero-title-line">REMEMBERING.</span>
+          </h1>
+
+          <p class="hero-description">
+            Discover concerts, hidden workshops, intimate dinners, exhibitions and experiences happening around you. Real moments in real spaces, documented like a travel journal.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#experiences" class="btn-primary-hero">
+              <span>EXPLORE EXPERIENCES</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#weekend" class="btn-secondary-hero">
+              <span>VIEW THIS WEEKEND</span>
+            </a>
+          </div>
+
+          <!-- Hero Telemetry & Coordinates Bar -->
+          <div class="hero-telemetry">
+            <div class="telemetry-block">
+              <span class="telemetry-status-dot"></span>
+              <span class="telemetry-key">LIVE TONIGHT</span>
+              <span class="telemetry-val">14 EXPERIENCES</span>
+            </div>
+            <div class="telemetry-divider">/</div>
+            <div class="telemetry-block">
+              <span class="telemetry-key">ANCHOR BASE</span>
+              <span class="telemetry-val">CHANDIGARH · 21°C</span>
+            </div>
+            <div class="telemetry-divider">/</div>
+            <div class="telemetry-block">
+              <span class="telemetry-key">GRID</span>
+              <span class="telemetry-val font-mono">30.7333° N</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Photographic Composition -->
+        <div class="hero-visual">
+          <div class="hero-frame">
+            <div class="hero-image-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80" 
+                alt="Atmospheric live musical performance in an intimate venue with cobalt and warm paper tones" 
+                class="hero-img"
+                loading="eager"
+              >
+              <div class="hero-image-overlay"></div>
+            </div>
+
+            <!-- Floating Editorial Metadata Tags -->
+            <div class="hero-meta-tag hero-meta-top-right">
+              <span class="meta-label">COORDINATES</span>
+              <span class="meta-val font-mono">30.7333° N · 76.7794° E</span>
+              <span class="meta-city">CHANDIGARH</span>
+            </div>
+
+            <div class="hero-meta-tag hero-meta-bottom-left">
+              <span class="meta-label">DATE STAMP</span>
+              <span class="meta-val font-mono">SATURDAY · 08 NOV 2026</span>
+              <span class="meta-sub">DOORS 20:00 HRS</span>
+            </div>
+
+            <!-- Rubber Stamp Overlay -->
+            <div class="hero-rubber-stamp" aria-hidden="true">
+              <div class="stamp-outer-ring">
+                <div class="stamp-inner-ring">
+                  <span class="stamp-curved-text">LUMORA CURATED SELECTION</span>
+                  <span class="stamp-center-text">AUTHENTIC<br>EXPERIENCE</span>
+                  <span class="stamp-bottom-text">2026 ISSUE</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Perforated Ticket Stub Element -->
+            <div class="hero-ticket-stub">
+              <div class="ticket-stub-notch notch-top"></div>
+              <div class="ticket-stub-body">
+                <div class="stub-serial">LUMORA / 001</div>
+                <div class="stub-type">ADMIT ONE · PRESS PASS</div>
+                <div class="stub-barcode font-mono" aria-hidden="true">||| | || |||| | ||| || |||</div>
+              </div>
+              <div class="ticket-stub-notch notch-bottom"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 01. THIS WEEKEND SECTION -->
+    <section class="section weekend-section" id="weekend">
+      <div class="section-container">
+        
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">01 / WHAT'S HAPPENING</span>
+            <h2 class="section-title">THIS WEEKEND</h2>
+          </div>
+          <div class="section-header-right">
+            <p class="section-lede">
+              Carefully vetted gatherings taking place in the next 72 hours. Rotated ticket-style passes with strictly capped intimate attendance.
+            </p>
+            <div class="rail-controls">
+              <button type="button" class="rail-btn" id="weekend-prev-btn" aria-label="Previous weekend events">← PREV</button>
+              <button type="button" class="rail-btn" id="weekend-next-btn" aria-label="Next weekend events">NEXT →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekend Days Filter Pills -->
+        <div class="weekend-day-filter">
+          <button type="button" class="day-filter-btn active" data-day="all">ALL WEEKEND</button>
+          <button type="button" class="day-filter-btn" data-day="friday">FRIDAY NIGHT (07 NOV)</button>
+          <button type="button" class="day-filter-btn" data-day="saturday">SATURDAY (08 NOV)</button>
+          <button type="button" class="day-filter-btn" data-day="sunday">SUNDAY (09 NOV)</button>
+        </div>
+
+        <!-- Horizontal Editorial Event Rail -->
+        <div class="weekend-rail" id="weekend-rail" tabindex="0" aria-label="Weekend experiences horizontal scroll">
+          <!-- Injected via JavaScript with subtle alternating tilt -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 02. DISCOVER BY MOOD SECTION -->
+    <section class="section mood-section" id="moods">
+      <div class="section-container">
+
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">02 / SENSORY INDEX</span>
+            <h2 class="section-title">WHAT ARE YOU IN THE MOOD FOR?</h2>
+          </div>
+          <div class="section-header-right">
+            <p class="section-lede">
+              Select an emotional impulse. Hover to preview field photography; click any mood index to filter our active ledger of events in real time.
+            </p>
+          </div>
+        </div>
+
+        <div class="mood-index-layout">
+          <!-- Typographic Mood List -->
+          <ul class="mood-list" role="list">
+            <li class="mood-item active" data-mood="lose-yourself" data-img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80" data-caption="Electronic soundscapes &amp; underground warehouse listening" data-count="4 Experiences">
+              <span class="mood-index-num">01</span>
+              <a href="#experiences" class="mood-link">
+                <span class="mood-title">LOSE YOURSELF</span>
+                <span class="mood-arrow">↗</span>
+              </a>
+              <span class="mood-tagline">Electronic music · Sound installations · Subterranean clubs</span>
+            </li>
+
+            <li class="mood-item" data-mood="make-something" data-img="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1200&q=80" data-caption="Ceramic wheel mastery &amp; darkroom silver gelatin printing" data-count="3 Experiences">
+              <span class="mood-index-num">02</span>
+              <a href="#experiences" class="mood-link">
+                <span class="mood-title">MAKE SOMETHING</span>
+                <span class="mood-arrow">↗</span>
+              </a>
+              <span class="mood-tagline">Tactile pottery · Risograph print · Analog darkroom</span>
+            </li>
+
+            <li class="mood-item" data-mood="meet-someone" data-img="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" data-caption="Communal banquets, secret courtyard salons &amp; literary debaters" data-count="3 Experiences">
+              <span class="mood-index-num">03</span>
+              <a href="#experiences" class="mood-link">
+                <span class="mood-title">MEET SOMEONE</span>
+                <span class="mood-arrow">↗</span>
+              </a>
+              <span class="mood-tagline">Long-table suppers · Slow salons · Creative dialogue</span>
+            </li>
+
+            <li class="mood-item" data-mood="taste-something" data-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80" data-caption="Wild ferments, heritage ancestral recipes &amp; blind tastings" data-count="3 Experiences">
+              <span class="mood-index-num">04</span>
+              <a href="#experiences" class="mood-link">
+                <span class="mood-title">TASTE SOMETHING</span>
+                <span class="mood-arrow">↗</span>
+              </a>
+              <span class="mood-tagline">Ancestral hearths · Natural wines · Chef counter takeovers</span>
+            </li>
+
+            <li class="mood-item" data-mood="see-something" data-img="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80" data-caption="Spatial art interventions &amp; 35mm rooftop cinema screenings" data-count="4 Experiences">
+              <span class="mood-index-num">05</span>
+              <a href="#experiences" class="mood-link">
+                <span class="mood-title">SEE SOMETHING</span>
+                <span class="mood-arrow">↗</span>
+              </a>
+              <span class="mood-tagline">Hidden galleries · Light interventions · Rooftop 35mm film</span>
+            </li>
+
+            <li class="mood-item" data-mood="stay-out-late" data-img="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80" data-caption="Midnight architectural walks &amp; secret vinyl speakeasies" data-count="3 Experiences">
+              <span class="mood-index-num">06</span>
+              <a href="#experiences" class="mood-link">
+                <span class="mood-title">STAY OUT LATE</span>
+                <span class="mood-arrow">↗</span>
+              </a>
+              <span class="mood-tagline">Nocturnal city walks · Vinyl dens · Secret terrace sessions</span>
+            </li>
+          </ul>
+
+          <!-- Interactive Mood Preview Viewport -->
+          <div class="mood-preview-card" aria-live="polite">
+            <div class="mood-preview-inner">
+              <div class="preview-badge-row">
+                <span class="preview-badge font-mono" id="mood-preview-count">4 EXPERIENCES</span>
+                <span class="preview-stamp">SENSORY REGISTER</span>
+              </div>
+              <div class="preview-image-frame">
+                <img 
+                  id="mood-preview-img" 
+                  src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80" 
+                  alt="Atmospheric venue preview for the selected mood" 
+                  class="preview-img"
+                >
+                <div class="preview-notch notch-left"></div>
+                <div class="preview-notch notch-right"></div>
+              </div>
+              <div class="preview-caption font-mono" id="mood-preview-caption">
+                Electronic soundscapes &amp; underground warehouse listening
+              </div>
+              <div class="preview-footer">
+                <span class="preview-prompt">CLICK MOOD TO FILTER ARCHIVE</span>
+                <span class="preview-arrow">↓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03. FEATURED EXPERIENCE SECTION -->
+    <section class="section featured-section" id="featured">
+      <div class="section-container">
+        
+        <div class="featured-card">
+          <div class="featured-grid">
+            
+            <!-- Left Info Column -->
+            <div class="featured-info">
+              <div class="featured-top-meta">
+                <span class="featured-label font-mono">EXPERIENCE / 042</span>
+                <span class="featured-badge font-mono">CURATOR'S MASTERWORK</span>
+              </div>
+
+              <h2 class="featured-title">THE CITY AFTER DARK</h2>
+
+              <p class="featured-desc">
+                A late-night cultural walk through hidden courtyards, independent galleries, vinyl bars and forgotten corners of the city. Guided by resident architects, archivists, and sonic artists.
+              </p>
+
+              <!-- Editorial Metadata Ledger -->
+              <div class="featured-ledger">
+                <div class="ledger-row">
+                  <span class="ledger-label">CITY &amp; BASE</span>
+                  <span class="ledger-val">CHANDIGARH · SECTOR 17</span>
+                </div>
+                <div class="ledger-row">
+                  <span class="ledger-label">COORDINATES</span>
+                  <span class="ledger-val font-mono">30.7333° N · 76.7794° E</span>
+                </div>
+                <div class="ledger-row">
+                  <span class="ledger-label">DATE &amp; TIME</span>
+                  <span class="ledger-val font-mono">09 NOV 2026 · 07:30 PM</span>
+                </div>
+                <div class="ledger-row">
+                  <span class="ledger-label">CURATOR</span>
+                  <span class="ledger-val">MAYA KAPOOR &amp; SECTOR STUDIO</span>
+                </div>
+                <div class="ledger-row">
+                  <span class="ledger-label">PASS RATE</span>
+                  <span class="ledger-val font-mono ledger-price">₹1,499 <span class="ledger-unit">/ ALL INCLUSIVE</span></span>
+                </div>
+              </div>
+
+              <!-- What's included preview -->
+              <div class="featured-inclusions">
+                <span class="inclusions-title font-mono">WHAT'S INCLUDED:</span>
+                <div class="inclusions-tags">
+                  <span class="inc-tag">✓ Secret Courtyard Access</span>
+                  <span class="inc-tag">✓ Vinyl Session &amp; Highball</span>
+                  <span class="inc-tag">✓ Archival Map &amp; Audio Guide</span>
+                  <span class="inc-tag">✓ Post-walk Midnight Tea</span>
+                </div>
+              </div>
+
+              <div class="featured-actions">
+                <button type="button" class="btn-primary-featured" id="featured-book-btn" data-event-id="042">
+                  <span>GET THE PASS</span>
+                  <span class="btn-arrow" aria-hidden="true">→</span>
+                </button>
+                <button type="button" class="btn-secondary-featured" id="featured-bookmark-btn" data-event-id="042" aria-label="Bookmark The City After Dark">
+                  <span>★ SAVE TO PASSPORT</span>
+                </button>
+              </div>
+
+              <div class="featured-availability font-mono">
+                <span class="pulse-dot"></span> ONLY 8 TICKETS REMAINING FOR 09 NOV
+              </div>
+            </div>
+
+            <!-- Right Cinematic Visual Column -->
+            <div class="featured-visual">
+              <div class="featured-image-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80" 
+                  alt="Atmospheric nocturnal city scene for The City After Dark experience"
+                  class="featured-img"
+                  loading="lazy"
+                >
+                <div class="featured-stamp-seal" aria-hidden="true">
+                  <div class="seal-inner">
+                    <span class="seal-top">VERIFIED EXPEDITION</span>
+                    <span class="seal-code font-mono">№ 042</span>
+                    <span class="seal-bot">LUMORA / 2026</span>
+                  </div>
+                </div>
+
+                <div class="featured-coord-pill font-mono">
+                  CHANDIGARH · 30.7333° N
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04. CITY EXPLORER SECTION -->
+    <section class="section city-section" id="cities">
+      <div class="section-container">
+
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">04 / CARTOGRAPHY</span>
+            <h2 class="section-title">EXPLORE THE CITY</h2>
+          </div>
+          <div class="section-header-right">
+            <p class="section-lede">
+              We anchor expeditions in cities rich with modernist friction, underground culture, and architectural memory. Select any coordinate to dynamically filter the ledger.
+            </p>
+          </div>
+        </div>
+
+        <div class="city-cartography-grid">
+          
+          <!-- Interactive Map Canvas / SVG Visual Representation -->
+          <div class="city-map-container" aria-label="Interactive map representation of Indian cultural hubs">
+            <div class="map-grid-overlay" aria-hidden="true"></div>
+            
+            <!-- Technical compass & scale -->
+            <div class="map-compass" aria-hidden="true">
+              <div class="compass-ring"></div>
+              <div class="compass-cross"></div>
+              <span class="compass-n">N</span>
+            </div>
+
+            <div class="map-scale font-mono" aria-hidden="true">
+              <span>SCALE: 1:500,000</span>
+              <span class="scale-bar"></span>
+            </div>
+
+            <div class="map-active-telemetry font-mono" id="map-telemetry">
+              ACTIVE GRID: CHANDIGARH · 30.7333° N / 76.7794° E
+            </div>
+
+            <!-- Visual Pin Nodes on Geographic Relative Layout -->
+            <div class="map-pins-layer" id="map-pins-layer">
+              <button type="button" class="map-pin active" style="top: 24%; left: 34%;" data-city="Chandigarh" aria-label="Select Chandigarh">
+                <span class="pin-pulse"></span>
+                <span class="pin-core"></span>
+                <span class="pin-label font-mono">CHANDIGARH [30.73° N]</span>
+              </button>
+
+              <button type="button" class="map-pin" style="top: 18%; left: 26%;" data-city="Amritsar" aria-label="Select Amritsar">
+                <span class="pin-pulse"></span>
+                <span class="pin-core"></span>
+                <span class="pin-label font-mono">AMRITSAR [31.63° N]</span>
+              </button>
+
+              <button type="button" class="map-pin" style="top: 36%; left: 36%;" data-city="Delhi" aria-label="Select Delhi">
+                <span class="pin-pulse"></span>
+                <span class="pin-core"></span>
+                <span class="pin-label font-mono">DELHI [28.61° N]</span>
+              </button>
+
+              <button type="button" class="map-pin" style="top: 42%; left: 29%;" data-city="Jaipur" aria-label="Select Jaipur">
+                <span class="pin-pulse"></span>
+                <span class="pin-core"></span>
+                <span class="pin-label font-mono">JAIPUR [26.91° N]</span>
+              </button>
+
+              <button type="button" class="map-pin" style="top: 66%; left: 25%;" data-city="Mumbai" aria-label="Select Mumbai">
+                <span class="pin-pulse"></span>
+                <span class="pin-core"></span>
+                <span class="pin-label font-mono">MUMBAI [19.07° N]</span>
+              </button>
+
+              <button type="button" class="map-pin" style="top: 82%; left: 42%;" data-city="Bangalore" aria-label="Select Bangalore">
+                <span class="pin-pulse"></span>
+                <span class="pin-core"></span>
+                <span class="pin-label font-mono">BANGALORE [12.97° N]</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- City Selection Index Cards -->
+          <div class="city-cards-list" role="tablist">
+            
+            <div class="city-card active" data-city="Chandigarh" role="tab" tabindex="0" aria-selected="true">
+              <div class="city-card-header">
+                <h3 class="city-name">CHANDIGARH</h3>
+                <span class="city-count font-mono">48 EXPERIENCES</span>
+              </div>
+              <div class="city-card-meta font-mono">
+                <span class="city-coord">30.7333° N / 76.7794° E</span>
+                <span class="city-tag">MODERNIST GRID · HERITAGE SOUND</span>
+              </div>
+              <p class="city-excerpt">
+                Brutalist concrete monoliths, subterranean jazz archives, and hidden courtyard banquets in Sector 17 and Capitol Complex.
+              </p>
+              <div class="city-action-link">
+                <span>FILTER ARCHIVE FOR CHANDIGARH</span>
+                <span class="link-arrow">→</span>
+              </div>
+            </div>
+
+            <div class="city-card" data-city="Delhi" role="tab" tabindex="0" aria-selected="false">
+              <div class="city-card-header">
+                <h3 class="city-name">DELHI</h3>
+                <span class="city-count font-mono">64 EXPERIENCES</span>
+              </div>
+              <div class="city-card-meta font-mono">
+                <span class="city-coord">28.6139° N / 77.2090° E</span>
+                <span class="city-tag">ANCIENT HAVELIS · WAREHOUSE LABS</span>
+              </div>
+              <p class="city-excerpt">
+                Secret rooftop Sufi gatherings in Nizamuddin, industrial sound experiments in Okhla, and heritage slow-food communal tables.
+              </p>
+              <div class="city-action-link">
+                <span>FILTER ARCHIVE FOR DELHI</span>
+                <span class="link-arrow">→</span>
+              </div>
+            </div>
+
+            <div class="city-card" data-city="Mumbai" role="tab" tabindex="0" aria-selected="false">
+              <div class="city-card-header">
+                <h3 class="city-name">MUMBAI</h3>
+                <span class="city-count font-mono">52 EXPERIENCES</span>
+              </div>
+              <div class="city-card-meta font-mono">
+                <span class="city-coord">19.0760° N / 72.8777° E</span>
+                <span class="city-tag">COASTAL VINYL · ART DECO ALCOVES</span>
+              </div>
+              <p class="city-excerpt">
+                Late-night vinyl listening sessions in Kala Ghoda, colonial warehouse galleries in Ballard Estate, and dockside dawn walks.
+              </p>
+              <div class="city-action-link">
+                <span>FILTER ARCHIVE FOR MUMBAI</span>
+                <span class="link-arrow">→</span>
+              </div>
+            </div>
+
+            <div class="city-card" data-city="Bangalore" role="tab" tabindex="0" aria-selected="false">
+              <div class="city-card-header">
+                <h3 class="city-name">BANGALORE</h3>
+                <span class="city-count font-mono">38 EXPERIENCES</span>
+              </div>
+              <div class="city-card-meta font-mono">
+                <span class="city-coord">12.9716° N / 77.5946° E</span>
+                <span class="city-tag">BOTANICAL ACOUSTICS · FERMENTATION</span>
+              </div>
+              <p class="city-excerpt">
+                Dawn soundwalks in heritage canopies, micro-brew fermentation workshops, and independent electronic modular synthesis rooms.
+              </p>
+              <div class="city-action-link">
+                <span>FILTER ARCHIVE FOR BANGALORE</span>
+                <span class="link-arrow">→</span>
+              </div>
+            </div>
+
+            <div class="city-card" data-city="Jaipur" role="tab" tabindex="0" aria-selected="false">
+              <div class="city-card-header">
+                <h3 class="city-name">JAIPUR</h3>
+                <span class="city-count font-mono">26 EXPERIENCES</span>
+              </div>
+              <div class="city-card-meta font-mono">
+                <span class="city-coord">26.9124° N / 75.7873° E</span>
+                <span class="city-tag">ARTISAN GUILDS · BLUE POTTERY</span>
+              </div>
+              <p class="city-excerpt">
+                Master blue pottery ateliers, astronomical observation salons at Jantar Mantar, and desert twilight acoustic concerts.
+              </p>
+              <div class="city-action-link">
+                <span>FILTER ARCHIVE FOR JAIPUR</span>
+                <span class="link-arrow">→</span>
+              </div>
+            </div>
+
+            <div class="city-card" data-city="Amritsar" role="tab" tabindex="0" aria-selected="false">
+              <div class="city-card-header">
+                <h3 class="city-name">AMRITSAR</h3>
+                <span class="city-count font-mono">19 EXPERIENCES</span>
+              </div>
+              <div class="city-card-meta font-mono">
+                <span class="city-coord">31.6340° N / 74.8723° E</span>
+                <span class="city-tag">SACRED HEARTHS · SPICE RUNS</span>
+              </div>
+              <p class="city-excerpt">
+                Centuries-old artisanal clay tandoor masterclasses, early morning spice market documentation, and classical raga dawns.
+              </p>
+              <div class="city-action-link">
+                <span>FILTER ARCHIVE FOR AMRITSAR</span>
+                <span class="link-arrow">→</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05. SMART DISCOVERY FILTER & EVENT LISTING -->
+    <section class="section archive-section" id="experiences">
+      <div class="section-container">
+
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">05 / THE ARCHIVE</span>
+            <h2 class="section-title">SHOW ME SOMETHING</h2>
+          </div>
+          <div class="section-header-right">
+            <p class="section-lede">
+              Fine-tune by geography, sensory mood, pricing tier, or timeline. No generic algorithms—only direct dispatches from independent hosts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Filter Control Station -->
+        <div class="discovery-filter-box">
+          <div class="filter-top-row">
+            <!-- Search Input -->
+            <div class="filter-search-group">
+              <label for="event-search" class="filter-label font-mono">KEYWORD SEARCH</label>
+              <div class="search-input-wrap">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input 
+                  type="text" 
+                  id="event-search" 
+                  class="search-input" 
+                  placeholder="Search jazz, pottery, courtyard, wine, rooftop..." 
+                  autocomplete="off"
+                >
+                <button type="button" class="search-clear-btn" id="search-clear" aria-label="Clear search" style="display: none;">✕</button>
+              </div>
+            </div>
+
+            <!-- Sorting Select -->
+            <div class="filter-sort-group">
+              <label for="event-sort" class="filter-label font-mono">ARRANGE BY</label>
+              <div class="custom-select-wrap">
+                <select id="event-sort" class="custom-select">
+                  <option value="curated">CURATOR'S ORDER</option>
+                  <option value="price-asc">PRICE: LOWEST FIRST</option>
+                  <option value="price-desc">PRICE: HIGHEST FIRST</option>
+                  <option value="date-asc">DATE: SOONEST FIRST</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">↓</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Filter Controls Row -->
+          <div class="filter-controls-row">
+            
+            <!-- City Filter -->
+            <div class="filter-field">
+              <label for="filter-city" class="filter-label font-mono">CITY BASE</label>
+              <div class="custom-select-wrap">
+                <select id="filter-city" class="custom-select">
+                  <option value="all">ALL CITIES</option>
+                  <option value="Chandigarh">CHANDIGARH</option>
+                  <option value="Delhi">DELHI</option>
+                  <option value="Mumbai">MUMBAI</option>
+                  <option value="Bangalore">BANGALORE</option>
+                  <option value="Jaipur">JAIPUR</option>
+                  <option value="Amritsar">AMRITSAR</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">↓</span>
+              </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="filter-field">
+              <label for="filter-category" class="filter-label font-mono">DISCIPLINE</label>
+              <div class="custom-select-wrap">
+                <select id="filter-category" class="custom-select">
+                  <option value="all">ALL DISCIPLINES</option>
+                  <option value="Music & Sound">MUSIC &amp; SOUND</option>
+                  <option value="Art & Design">ART &amp; DESIGN</option>
+                  <option value="Culinary">CULINARY &amp; WINE</option>
+                  <option value="Workshops">WORKSHOPS &amp; CRAFT</option>
+                  <option value="Nightlife">NIGHTLIFE &amp; CLUBS</option>
+                  <option value="Culture & Walks">CULTURE &amp; WALKS</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">↓</span>
+              </div>
+            </div>
+
+            <!-- Date Filter -->
+            <div class="filter-field">
+              <label for="filter-date" class="filter-label font-mono">TIMELINE</label>
+              <div class="custom-select-wrap">
+                <select id="filter-date" class="custom-select">
+                  <option value="all">ANY TIME</option>
+                  <option value="weekend">THIS WEEKEND</option>
+                  <option value="7days">NEXT 7 DAYS</option>
+                  <option value="month">THIS MONTH</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">↓</span>
+              </div>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="filter-field">
+              <label for="filter-price" class="filter-label font-mono">PASS VALUATION</label>
+              <div class="custom-select-wrap">
+                <select id="filter-price" class="custom-select">
+                  <option value="all">ANY PRICE</option>
+                  <option value="under1000">UNDER ₹1,000</option>
+                  <option value="1000to2000">₹1,000 – ₹2,000</option>
+                  <option value="above2000">OVER ₹2,000</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">↓</span>
+              </div>
+            </div>
+
+            <!-- Mood Filter -->
+            <div class="filter-field">
+              <label for="filter-mood" class="filter-label font-mono">SENSORY MOOD</label>
+              <div class="custom-select-wrap">
+                <select id="filter-mood" class="custom-select">
+                  <option value="all">ALL MOODS</option>
+                  <option value="lose-yourself">LOSE YOURSELF</option>
+                  <option value="make-something">MAKE SOMETHING</option>
+                  <option value="meet-someone">MEET SOMEONE</option>
+                  <option value="taste-something">TASTE SOMETHING</option>
+                  <option value="see-something">SEE SOMETHING</option>
+                  <option value="stay-out-late">STAY OUT LATE</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">↓</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Active Filter Pill Tags Bar -->
+          <div class="active-filters-bar">
+            <div class="results-tally font-mono">
+              <span class="tally-count" id="results-count">14</span>
+              <span class="tally-label">EXPERIENCES FOUND</span>
+            </div>
+
+            <div class="active-pills-wrap" id="active-pills-wrap">
+              <!-- Dynamically populated tags -->
+            </div>
+
+            <button type="button" class="btn-reset-filters" id="reset-filters-btn">
+              RESET ALL FILTERS
+            </button>
+          </div>
+        </div>
+
+        <!-- Master Editorial Event List -->
+        <div class="editorial-event-list" id="event-list" role="feed" aria-busy="false" aria-label="Curated event listing">
+          <!-- Injected via JavaScript with alternating left/right layouts -->
+        </div>
+
+        <!-- Empty state fallback -->
+        <div class="empty-results-state" id="empty-state" style="display: none;">
+          <div class="empty-stamp font-mono">[ NULL DISPATCH ]</div>
+          <h3 class="empty-title">NO MATCHING EXPERIENCES</h3>
+          <p class="empty-desc">
+            No events match the current combination of coordinates, mood, and price filters. Reset your filters to explore our full ledger.
+          </p>
+          <button type="button" class="btn-primary-hero" id="empty-reset-btn">
+            SHOW ALL 14 EXPERIENCES
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 06. DIGITAL PASSPORT SECTION -->
+    <section class="section passport-section" id="passport">
+      <div class="section-container">
+
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">06 / CITIZEN ARCHIVE</span>
+            <h2 class="section-title">MY LUMORA PASSPORT</h2>
+          </div>
+          <div class="section-header-right">
+            <p class="section-lede">
+              A physical travel journal transformed into a digital ledger. Each experience you attend stamps your personal passport with ink coordinates, date verification, and admission notes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Physical Passport Booklet Display -->
+        <div class="passport-booklet">
+          
+          <!-- Passport Top Header / Identity Page -->
+          <div class="passport-page-header">
+            <div class="passport-crest" aria-hidden="true">
+              <div class="crest-circle">
+                <span class="crest-stars">★ ★ ★</span>
+                <span class="crest-code font-mono">LMR-2026</span>
+                <span class="crest-country">REPUBLIC OF EXPERIENCES</span>
+              </div>
+            </div>
+
+            <div class="passport-id-block">
+              <div class="passport-id-row">
+                <span class="id-key font-mono">PASSPORT NO:</span>
+                <span class="id-val font-mono" id="passport-serial-number">LM-9824-2026-IND</span>
+              </div>
+              <div class="passport-id-row">
+                <span class="id-key font-mono">BEARER:</span>
+                <span class="id-val font-mono" id="passport-holder-name">ANONYMOUS WANDERER</span>
+              </div>
+              <div class="passport-id-row">
+                <span class="id-key font-mono">BASE CITY:</span>
+                <span class="id-val font-mono">CHANDIGARH [30.7333° N]</span>
+              </div>
+              <div class="passport-id-row">
+                <span class="id-key font-mono">VALIDITY:</span>
+                <span class="id-val font-mono">UNLIMITED · LIFETIME PASS</span>
+              </div>
+            </div>
+
+            <div class="passport-status-stamp">
+              <div class="status-stamp-box">
+                <span class="stamp-verified-label">OFFICIALLY ISSUED</span>
+                <span class="stamp-verified-date font-mono">AUTUMN 2026</span>
+                <span class="stamp-verified-tier font-mono">CITIZEN TIER 01</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Passport Stamp Grid -->
+          <div class="passport-stamps-ledger">
+            <div class="ledger-watermark font-mono" aria-hidden="true">
+              LUMORA CITIZEN ARCHIVE · VERIFIED ATTENDANCE RECORD
+            </div>
+
+            <div class="stamps-grid" id="passport-stamps-grid">
+              <!-- Initial 5 default stamps + newly booked ones dynamically added -->
+            </div>
+          </div>
+
+          <!-- Passport Controls & Action Bar -->
+          <div class="passport-actions-bar">
+            <div class="passport-stat font-mono">
+              <span class="stat-count" id="passport-stamp-counter">5</span>
+              <span class="stat-label">STAMPS COLLECTED</span>
+            </div>
+            <div class="passport-buttons">
+              <button type="button" class="btn-passport-sub" id="demo-stamp-btn">
+                + SAMPLE RANDOM STAMP
+              </button>
+              <button type="button" class="btn-passport-sub" id="clear-stamps-btn">
+                RESET TO DEFAULT STAMPS
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 07. YOUR YEAR IN EXPERIENCES SECTION (STATISTICS) -->
+    <section class="section stats-section" id="stats">
+      <div class="section-container">
+
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">07 / ANNUAL CHRONICLE</span>
+            <h2 class="section-title">YOUR YEAR IN EXPERIENCES</h2>
+          </div>
+          <div class="section-header-right">
+            <p class="section-lede">
+              The anti-algorithm ledger. Count real encounters, unfamiliar zip codes, and tactile hours reclaimed from glass screens.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Large Typographic Animated Metric Tiles -->
+        <div class="stats-grid">
+          
+          <div class="stat-tile">
+            <div class="stat-top font-mono">METRIC / 01</div>
+            <div class="stat-num font-serif" data-target="7">00</div>
+            <div class="stat-label">Experiences Attended</div>
+            <p class="stat-note font-mono">From subterranean basement sessions to dawn harvests.</p>
+          </div>
+
+          <div class="stat-tile">
+            <div class="stat-top font-mono">METRIC / 02</div>
+            <div class="stat-num font-serif" data-target="4">00</div>
+            <div class="stat-label">Cities Explored</div>
+            <p class="stat-note font-mono">Chandigarh, Delhi, Mumbai, and the pink lanes of Jaipur.</p>
+          </div>
+
+          <div class="stat-tile">
+            <div class="stat-top font-mono">METRIC / 03</div>
+            <div class="stat-num font-serif" data-target="18">00</div>
+            <div class="stat-label">Hours Spent Outside</div>
+            <p class="stat-note font-mono">Time lived without glancing at notifications or social feeds.</p>
+          </div>
+
+          <div class="stat-tile">
+            <div class="stat-top font-mono">METRIC / 04</div>
+            <div class="stat-num font-serif" data-target="3">00</div>
+            <div class="stat-label">New Places Discovered</div>
+            <p class="stat-note font-mono">Spaces you walk past daily without realizing what happens behind the door.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 08. EXPERIENCE GALLERY (Unsplash Lightbox Grid) -->
+    <section class="section gallery-section" id="gallery">
+      <div class="section-container">
+
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">08 / FIELD GALLERY</span>
+            <h2 class="section-title">MOMENTS CAPTURED IN THE FIELD</h2>
+          </div>
+          <div class="section-header-right">
+            <p class="section-lede">
+              Photographs recorded by attendees and resident creators during live editions. Click any frame to inspect the field notes in full-screen magnification.
+            </p>
+          </div>
+        </div>
+
+        <!-- Editorial Mixed Masonry Grid (portrait, landscape, large, small) -->
+        <div class="gallery-grid" id="gallery-grid">
+          
+          <!-- Image 1: Large Featured Landscape -->
+          <figure class="gallery-item item-wide" data-index="0" data-caption="Midnight horn acoustics inside Sector 17 basement vaults" data-city="Chandigarh" data-coord="30.7333° N" data-photog="Karan V.">
+            <div class="gallery-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=1200&q=80" 
+                alt="Atmospheric live trumpet and jazz in a dark ambient room"
+                loading="lazy"
+                class="gallery-thumb"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon">⊕ INSPECT</span>
+                <span class="gallery-item-city font-mono">CHANDIGARH · 30.7333° N</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption-bar font-mono">
+              <span class="cap-num">FRAME / 01</span>
+              <span class="cap-text">Midnight horn acoustics inside Sector 17 basement</span>
+            </figcaption>
+          </figure>
+
+          <!-- Image 2: Tall Portrait -->
+          <figure class="gallery-item item-tall" data-index="1" data-caption="Hand-thrown terracotta pottery and natural iron oxide glazes" data-city="Jaipur" data-coord="26.9124° N" data-photog="Nandini P.">
+            <div class="gallery-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1000&q=80" 
+                alt="Artisan hands shaping clay pottery on a wheel"
+                loading="lazy"
+                class="gallery-thumb"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon">⊕ INSPECT</span>
+                <span class="gallery-item-city font-mono">JAIPUR · 26.9124° N</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption-bar font-mono">
+              <span class="cap-num">FRAME / 02</span>
+              <span class="cap-text">Hand-thrown terracotta and cobalt glazes</span>
+            </figcaption>
+          </figure>
+
+          <!-- Image 3: Standard Square -->
+          <figure class="gallery-item" data-index="2" data-caption="Long-table communal supper under ancestral banyan tree" data-city="Delhi" data-coord="28.6139° N" data-photog="Dev S.">
+            <div class="gallery-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" 
+                alt="Warm communal banquet table with food and wine glasses"
+                loading="lazy"
+                class="gallery-thumb"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon">⊕ INSPECT</span>
+                <span class="gallery-item-city font-mono">DELHI · 28.6139° N</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption-bar font-mono">
+              <span class="cap-num">FRAME / 03</span>
+              <span class="cap-text">Long-table communal supper</span>
+            </figcaption>
+          </figure>
+
+          <!-- Image 4: Tall Portrait -->
+          <figure class="gallery-item item-tall" data-index="3" data-caption="Rare Indian funk and Japanese ambient vinyl spin session" data-city="Mumbai" data-coord="19.0760° N" data-photog="Sameer M.">
+            <div class="gallery-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1000&q=80" 
+                alt="Close-up of turntable stylus playing a vinyl record"
+                loading="lazy"
+                class="gallery-thumb"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon">⊕ INSPECT</span>
+                <span class="gallery-item-city font-mono">MUMBAI · 19.0760° N</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption-bar font-mono">
+              <span class="cap-num">FRAME / 04</span>
+              <span class="cap-text">Kala Ghoda vinyl spin session</span>
+            </figcaption>
+          </figure>
+
+          <!-- Image 5: Large 2x2 Feature -->
+          <figure class="gallery-item item-big" data-index="4" data-caption="Site-specific light intervention in abandoned textile mill" data-city="Bangalore" data-coord="12.9716° N" data-photog="Ananya G.">
+            <div class="gallery-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80" 
+                alt="Contemporary art exhibition space with dramatic lighting"
+                loading="lazy"
+                class="gallery-thumb"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon">⊕ INSPECT</span>
+                <span class="gallery-item-city font-mono">BANGALORE · 12.9716° N</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption-bar font-mono">
+              <span class="cap-num">FRAME / 05</span>
+              <span class="cap-text">Site-specific spatial intervention</span>
+            </figcaption>
+          </figure>
+
+          <!-- Image 6: Standard -->
+          <figure class="gallery-item" data-index="5" data-caption="Wild fermentation jars and spontaneous microbial experiments" data-city="Bangalore" data-coord="12.9716° N" data-photog="Rohit C.">
+            <div class="gallery-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=80" 
+                alt="Wine tasting glasses and glass vessels"
+                loading="lazy"
+                class="gallery-thumb"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon">⊕ INSPECT</span>
+                <span class="gallery-item-city font-mono">BANGALORE · 12.9716° N</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption-bar font-mono">
+              <span class="cap-num">FRAME / 06</span>
+              <span class="cap-text">Wild fermentation laboratory</span>
+            </figcaption>
+          </figure>
+
+          <!-- Image 7: Wide -->
+          <figure class="gallery-item item-wide" data-index="6" data-caption="Late night courtyard walk under Brutalist pilotis" data-city="Chandigarh" data-coord="30.7333° N" data-photog="Maya K.">
+            <div class="gallery-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80" 
+                alt="Night street architecture with ambient streetlamps"
+                loading="lazy"
+                class="gallery-thumb"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon">⊕ INSPECT</span>
+                <span class="gallery-item-city font-mono">CHANDIGARH · 30.7333° N</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption-bar font-mono">
+              <span class="cap-num">FRAME / 07</span>
+              <span class="cap-text">The City After Dark walk</span>
+            </figcaption>
+          </figure>
+
+          <!-- Image 8: Standard -->
+          <figure class="gallery-item" data-index="7" data-caption="Analog 35mm silver gelatin print development in red safe-light" data-city="Delhi" data-coord="28.6139° N" data-photog="Arjun V.">
+            <div class="gallery-img-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80" 
+                alt="Analog camera and photographic gear"
+                loading="lazy"
+                class="gallery-thumb"
+              >
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon">⊕ INSPECT</span>
+                <span class="gallery-item-city font-mono">DELHI · 28.6139° N</span>
+              </div>
+            </div>
+            <figcaption class="gallery-caption-bar font-mono">
+              <span class="cap-num">FRAME / 08</span>
+              <span class="cap-text">Darkroom print development</span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image Lightbox">
+      <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+      
+      <div class="lightbox-container">
+        <div class="lightbox-top-bar">
+          <div class="lightbox-counter font-mono" id="lightbox-counter">01 / 08</div>
+          <div class="lightbox-meta font-mono" id="lightbox-meta">CHANDIGARH · 30.7333° N</div>
+          <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">✕</button>
+        </div>
+
+        <div class="lightbox-main-stage">
+          <button type="button" class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="Previous image">‹</button>
+          
+          <div class="lightbox-image-box">
+            <img src="" alt="" id="lightbox-img" class="lightbox-active-img">
+          </div>
+
+          <button type="button" class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="Next image">›</button>
+        </div>
+
+        <div class="lightbox-bottom-bar font-mono">
+          <div class="lightbox-caption" id="lightbox-caption">Caption text goes here</div>
+          <div class="lightbox-photog" id="lightbox-photog">PHOTOGRAPHED BY KARAN V.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09. CREATOR SECTION -->
+    <section class="section creator-section" id="creators">
+      <div class="section-container">
+
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">09 / THE RESIDENTS</span>
+            <h2 class="section-title">BUILT BY PEOPLE WHO MAKE THINGS HAPPEN</h2>
+          </div>
+          <div class="section-header-right">
+            <p class="section-lede">
+              LUMORA hosts are independent architects, vinyl collectors, culinary anthropologists, and printmakers. They open doors that are never unlocked for the general public.
+            </p>
+          </div>
+        </div>
+
+        <div class="creators-grid">
+          
+          <!-- Creator 1 -->
+          <article class="creator-card">
+            <div class="creator-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
+                alt="Portrait of Maya Kapoor" 
+                class="creator-img"
+                loading="lazy"
+              >
+              <span class="creator-coord font-mono">30.7333° N</span>
+            </div>
+            <div class="creator-content">
+              <span class="creator-role font-mono">INDEPENDENT CURATOR &amp; ARCHITECT</span>
+              <h3 class="creator-name">MAYA KAPOOR</h3>
+              <p class="creator-bio">
+                "Bringing forgotten modernist architecture to life through site-specific sonic performances and nocturnal courtyard walks in Chandigarh."
+              </p>
+              <div class="creator-footer">
+                <span class="creator-count font-mono">6 HOSTED EDITIONS</span>
+                <button type="button" class="creator-filter-link" data-creator="Maya Kapoor">VIEW EXPERIENCES →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Creator 2 -->
+          <article class="creator-card">
+            <div class="creator-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
+                alt="Portrait of Rohan Seth" 
+                class="creator-img"
+                loading="lazy"
+              >
+              <span class="creator-coord font-mono">19.0760° N</span>
+            </div>
+            <div class="creator-content">
+              <span class="creator-role font-mono">MUSIC PRODUCER &amp; ARCHIVIST</span>
+              <h3 class="creator-name">ROHAN SETH</h3>
+              <p class="creator-bio">
+                "Preserving subcontinental funk, tape loops, and rare vinyl cuts in intimate subterranean listening rooms in Kala Ghoda and Hauz Khas."
+              </p>
+              <div class="creator-footer">
+                <span class="creator-count font-mono">9 HOSTED EDITIONS</span>
+                <button type="button" class="creator-filter-link" data-creator="Rohan Seth">VIEW EXPERIENCES →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Creator 3 -->
+          <article class="creator-card">
+            <div class="creator-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" 
+                alt="Portrait of Aarav Mehta" 
+                class="creator-img"
+                loading="lazy"
+              >
+              <span class="creator-coord font-mono">28.6139° N</span>
+            </div>
+            <div class="creator-content">
+              <span class="creator-role font-mono">FOOD &amp; CULTURE HOST</span>
+              <h3 class="creator-name">AARAV MEHTA</h3>
+              <p class="creator-bio">
+                "Connecting communal tables with generational heritage hearths, wild fermentation vats, and slow-cook culinary anthropology across North India."
+              </p>
+              <div class="creator-footer">
+                <span class="creator-count font-mono">8 HOSTED EDITIONS</span>
+                <button type="button" class="creator-filter-link" data-creator="Aarav Mehta">VIEW EXPERIENCES →</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Creator CTA Strip -->
+        <div class="creator-cta-strip">
+          <div class="cta-strip-text">
+            <h4 class="strip-heading">DO YOU CULTIVATE UNIQUE REAL-WORLD MOMENTS?</h4>
+            <p class="strip-sub">We partner with independent curators, artists, chefs, and space-holders who respect intimacy and craftsmanship.</p>
+          </div>
+          <button type="button" class="btn-create-banner" id="creator-open-btn">
+            CREATE YOUR EXPERIENCE →
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 10. TESTIMONIALS (Oversized Editorial Typography) -->
+    <section class="section testimonial-section" id="dispatch">
+      <div class="section-container">
+
+        <div class="section-header-editorial">
+          <div class="section-header-left">
+            <span class="section-number">10 / FIELD DISPATCHES</span>
+            <h2 class="section-title">VOICES FROM THE CITY</h2>
+          </div>
+          <div class="section-header-right">
+            <div class="testimonial-controls">
+              <button type="button" class="test-btn" id="test-prev" aria-label="Previous quote">←</button>
+              <span class="test-counter font-mono" id="test-counter">01 / 03</span>
+              <button type="button" class="test-btn" id="test-next" aria-label="Next quote">→</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-stage" id="testimonial-stage">
+          
+          <div class="testimonial-slide active" data-index="0">
+            <blockquote class="testimonial-quote">
+              “LUMORA made me stop scrolling and actually go outside.”
+            </blockquote>
+            <div class="testimonial-author">
+              <span class="author-name">RIYA SHARMA</span>
+              <span class="author-city font-mono">CHANDIGARH · ATTENDED SOUND / SPACE</span>
+            </div>
+          </div>
+
+          <div class="testimonial-slide" data-index="1">
+            <blockquote class="testimonial-quote">
+              “The late-night architectural walk felt like discovering a secret, cinematic version of my own hometown.”
+            </blockquote>
+            <div class="testimonial-author">
+              <span class="author-name">KABIR MALHOTRA</span>
+              <span class="author-city font-mono">DELHI · ATTENDED THE CITY AFTER DARK</span>
+            </div>
+          </div>
+
+          <div class="testimonial-slide" data-index="2">
+            <blockquote class="testimonial-quote">
+              “Three strangers I met at the wild fermentation table are now my regular weekend dinner crew. Rare magic.”
+            </blockquote>
+            <div class="testimonial-author">
+              <span class="author-name">ANANYA DESHMUKH</span>
+              <span class="author-city font-mono">MUMBAI · ATTENDED HARVEST &amp; YEAST</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 11. FINAL CTA -->
+    <section class="section final-cta-section" id="cta">
+      <div class="cta-backdrop-layer">
+        <img 
+          src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80" 
+          alt="Atmospheric venue lighting background"
+          class="cta-backdrop-img"
+          loading="lazy"
+        >
+        <div class="cta-overlay-grain"></div>
+      </div>
+
+      <div class="section-container cta-container">
+        <div class="cta-content-box">
+          <div class="cta-tag font-mono">[ MANIFESTO / 2026 ]</div>
+          <h2 class="cta-headline">
+            DON'T JUST WATCH<br>
+            THE CITY.<br>
+            <span class="italic-accent">LIVE IT.</span>
+          </h2>
+          <p class="cta-body">
+            Curated experiences every Thursday, Friday, and Saturday. Passes are strictly limited to preserve the intimacy of the room.
+          </p>
+          <div class="cta-btn-group">
+            <a href="#experiences" class="btn-primary-hero">
+              <span>EXPLORE WHAT'S NEXT</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#passport" class="btn-secondary-hero">
+              <span>INSPECT YOUR PASSPORT</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 12. EDITORIAL FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Upper Footer Grid -->
+      <div class="footer-main-grid">
+        
+        <!-- Brand column -->
+        <div class="footer-col brand-col">
+          <a href="#hero" class="footer-brand">LUMORA®</a>
+          <p class="footer-tagline">"Find the moments worth remembering."</p>
+          <p class="footer-manifesto">
+            An independent digital travel journal and cultural ticketing bureau. Designed for the curious, the tactile, and the nocturnal.
+          </p>
+          <div class="footer-base-stamp font-mono">
+            BASE COORDINATE: 30.7333° N, 76.7794° E
+          </div>
+        </div>
+
+        <!-- Navigation column -->
+        <div class="footer-col">
+          <h4 class="footer-heading font-mono">EXPEDITIONS</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Discover Index</a></li>
+            <li><a href="#weekend">This Weekend</a></li>
+            <li><a href="#experiences">The Full Archive</a></li>
+            <li><a href="#cities">City Cartography</a></li>
+            <li><a href="#passport">Citizen Passport</a></li>
+            <li><a href="#gallery">Field Photography</a></li>
+          </ul>
+        </div>
+
+        <!-- Cities column -->
+        <div class="footer-col">
+          <h4 class="footer-heading font-mono">ACTIVE HUBS</h4>
+          <ul class="footer-links font-mono">
+            <li><a href="#experiences" data-footer-city="Chandigarh">Chandigarh · 30.73° N</a></li>
+            <li><a href="#experiences" data-footer-city="Delhi">Delhi · 28.61° N</a></li>
+            <li><a href="#experiences" data-footer-city="Mumbai">Mumbai · 19.07° N</a></li>
+            <li><a href="#experiences" data-footer-city="Bangalore">Bangalore · 12.97° N</a></li>
+            <li><a href="#experiences" data-footer-city="Jaipur">Jaipur · 26.91° N</a></li>
+            <li><a href="#experiences" data-footer-city="Amritsar">Amritsar · 31.63° N</a></li>
+          </ul>
+        </div>
+
+        <!-- Social & Dispatches column -->
+        <div class="footer-col">
+          <h4 class="footer-heading font-mono">DISPATCHES</h4>
+          <ul class="footer-links">
+            <li><a href="#dispatch">Field Notes &amp; Reviews</a></li>
+            <li><a href="#creators">Creator Applications</a></li>
+            <li><a href="#main-content" id="footer-save-trigger">Saved Bookmarks</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram [@lumora.live]</a></li>
+            <li><a href="https://are.na" target="_blank" rel="noopener">Are.na [/lumora-archive]</a></li>
+            <li><a href="https://substack.com" target="_blank" rel="noopener">The Saturday Signal [Substack]</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Technical Strip -->
+      <div class="footer-bottom-strip font-mono">
+        <div class="bottom-left">
+          <span>LUMORA / DIGITAL EXPERIENCE PLATFORM</span>
+          <span class="bot-divider">·</span>
+          <span>JOURNAL ENGINE VER 2.6.4</span>
+        </div>
+        <div class="bottom-center">
+          <span>ALL RIGHTS RESERVED © 2026</span>
+          <span class="bot-divider">·</span>
+          <span>PRINTED DIGITALLY ON WARM PAPER</span>
+        </div>
+        <div class="bottom-right">
+          <button type="button" class="btn-back-to-top" id="back-to-top-btn">
+            BACK TO TOP ↑
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= MODALS & DRAWERS ================= -->
+
+  <!-- 1. EVENT DETAILS & BOOKING MODAL -->
+  <div class="modal-backdrop" id="event-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modal-event-title">
+    <div class="modal-window">
+      
+      <!-- Close Button -->
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+
+      <div class="modal-grid">
+        
+        <!-- Left Visual & Highlights Frame -->
+        <div class="modal-left-frame">
+          <div class="modal-img-container">
+            <img src="" alt="" id="modal-event-img" class="modal-hero-img">
+            <div class="modal-img-overlay"></div>
+            
+            <div class="modal-overlay-badge font-mono" id="modal-event-badge">
+              № 014 · LIVE
+            </div>
+
+            <div class="modal-rubber-stamp" id="modal-rubber-stamp" aria-hidden="true">
+              <span class="m-stamp-text">OFFICIAL SELECTION</span>
+              <span class="m-stamp-year">2026</span>
+            </div>
+          </div>
+
+          <div class="modal-host-card">
+            <span class="host-tag font-mono">CURATED &amp; HOSTED BY</span>
+            <div class="host-identity">
+              <span class="host-name" id="modal-host-name">Maya Kapoor</span>
+              <span class="host-badge font-mono">VERIFIED CITIZEN HOST</span>
+            </div>
+            <p class="host-bio font-mono" id="modal-host-bio">Independent architect and sonic researcher based in Sector 17.</p>
+          </div>
+        </div>
+
+        <!-- Right Content & Booking Flow -->
+        <div class="modal-right-frame">
+          
+          <div class="modal-content-scroll">
+            
+            <div class="modal-meta-top font-mono">
+              <span id="modal-event-city">CHANDIGARH</span>
+              <span>·</span>
+              <span id="modal-event-coords">30.7333° N, 76.7794° E</span>
+              <span>·</span>
+              <span id="modal-event-category">MUSIC &amp; SOUND</span>
+            </div>
+
+            <h2 class="modal-title" id="modal-event-title">MIDNIGHT JAZZ AT THE ATTIC</h2>
+
+            <!-- Event Logistical Strip -->
+            <div class="modal-logistics-bar font-mono">
+              <div class="log-item">
+                <span class="log-label">DATE</span>
+                <span class="log-val" id="modal-event-date">08 NOV 2026</span>
+              </div>
+              <div class="log-item">
+                <span class="log-label">TIME</span>
+                <span class="log-val" id="modal-event-time">08:30 PM IST</span>
+              </div>
+              <div class="log-item">
+                <span class="log-label">LOCATION</span>
+                <span class="log-val" id="modal-event-venue">Sector 17, Attic Vault</span>
+              </div>
+              <div class="log-item">
+                <span class="log-label">ADMISSION</span>
+                <span class="log-val" id="modal-event-baseprice">From ₹899</span>
+              </div>
+            </div>
+
+            <!-- Narrative Description -->
+            <div class="modal-body-text">
+              <h4 class="sub-head font-mono">THE EXPERIENCE</h4>
+              <p id="modal-event-desc">
+                An intimate acoustic performance in an untreated concrete attic with vintage microphones, candle lighting, and natural reverberation.
+              </p>
+            </div>
+
+            <!-- What's Included -->
+            <div class="modal-inclusions-block">
+              <h4 class="sub-head font-mono">WHAT'S INCLUDED IN YOUR PASS</h4>
+              <ul class="inclusions-list font-mono" id="modal-inclusions-list">
+                <li>Entry &amp; reserved seat in the listening circle</li>
+                <li>Single-origin welcome pour or botanical highball</li>
+                <li>Unplugged 90-minute live performance &amp; conversation</li>
+                <li>Digital Passport verification stamp upon check-in</li>
+              </ul>
+            </div>
+
+            <!-- STEP-BY-STEP SIMULATED BOOKING FLOW -->
+            <div class="booking-flow-container" id="booking-flow">
+              
+              <div class="booking-flow-header">
+                <span class="flow-title">RESERVE YOUR PASS</span>
+                <div class="flow-steps-pill font-mono">
+                  <span class="step-num active" id="pill-step-1">1. PASS</span>
+                  <span class="step-arrow">→</span>
+                  <span class="step-num" id="pill-step-2">2. DETAILS</span>
+                  <span class="step-arrow">→</span>
+                  <span class="step-num" id="pill-step-3">3. CONFIRM</span>
+                </div>
+              </div>
+
+              <!-- STEP 1: Pass Selection -->
+              <div class="booking-step active" id="book-step-1">
+                <div class="step-instruct font-mono">STEP 01: SELECT PASS TIER &amp; QUANTITY</div>
+                
+                <div class="pass-tiers-grid">
+                  
+                  <label class="pass-tier-card selected" data-tier="general" data-price="899">
+                    <input type="radio" name="pass-tier" value="general" checked>
+                    <div class="tier-card-content">
+                      <div class="tier-top">
+                        <span class="tier-name">GENERAL ADMISSION</span>
+                        <span class="tier-price font-mono" id="tier-price-gen">₹899</span>
+                      </div>
+                      <p class="tier-desc">Guaranteed standing &amp; casual seating. Welcome beverage included.</p>
+                    </div>
+                  </label>
+
+                  <label class="pass-tier-card" data-tier="premium" data-price="1499">
+                    <input type="radio" name="pass-tier" value="premium">
+                    <div class="tier-card-content">
+                      <div class="tier-top">
+                        <span class="tier-name">PREMIUM FRONT ROW</span>
+                        <span class="tier-price font-mono" id="tier-price-prem">₹1,499</span>
+                      </div>
+                      <p class="tier-desc">Direct line-of-sight reserved armchairs, artist conversation &amp; tasting flight.</p>
+                    </div>
+                  </label>
+
+                  <label class="pass-tier-card" data-tier="vip" data-price="2499">
+                    <input type="radio" name="pass-tier" value="vip">
+                    <div class="tier-card-content">
+                      <div class="tier-top">
+                        <span class="tier-name">VIP COLLECTOR'S PASS</span>
+                        <span class="tier-price font-mono" id="tier-price-vip">₹2,499</span>
+                      </div>
+                      <p class="tier-desc">Full backstage access, hand-numbered risograph event poster, all pours &amp; dinner.</p>
+                    </div>
+                  </label>
+
+                </div>
+
+                <!-- Quantity Selector -->
+                <div class="ticket-qty-row">
+                  <span class="qty-label font-mono">NUMBER OF PASSES:</span>
+                  <div class="qty-stepper font-mono">
+                    <button type="button" class="btn-qty" id="qty-minus" aria-label="Decrease quantity">-</button>
+                    <span class="qty-val" id="qty-val">1</span>
+                    <button type="button" class="btn-qty" id="qty-plus" aria-label="Increase quantity">+</button>
+                  </div>
+                </div>
+
+                <button type="button" class="btn-step-next" id="goto-step-2">
+                  CONTINUE TO YOUR DETAILS →
+                </button>
+              </div>
+
+              <!-- STEP 2: Attendee Details -->
+              <div class="booking-step" id="book-step-2">
+                <div class="step-instruct font-mono">STEP 02: CITIZEN INFORMATION</div>
+
+                <form id="booking-details-form" onsubmit="return false;">
+                  <div class="form-group">
+                    <label for="attendee-name" class="form-label font-mono">FULL NAME (PRINTED ON PASSPORT TICKET)</label>
+                    <input type="text" id="attendee-name" class="form-input" placeholder="e.g. Kabir Mehra" required>
+                  </div>
+
+                  <div class="form-row-2">
+                    <div class="form-group">
+                      <label for="attendee-email" class="form-label font-mono">EMAIL ADDRESS</label>
+                      <input type="email" id="attendee-email" class="form-input" placeholder="name@domain.com" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="attendee-phone" class="form-label font-mono">PHONE (FOR VENUE DISPATCH)</label>
+                      <input type="tel" id="attendee-phone" class="form-input" placeholder="+91 98765 43210" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="attendee-notes" class="form-label font-mono">SPECIAL ACCESS OR DIETARY NOTES (OPTIONAL)</label>
+                    <input type="text" id="attendee-notes" class="form-input" placeholder="Vegetarian, low mobility, etc.">
+                  </div>
+
+                  <div class="step-buttons-row">
+                    <button type="button" class="btn-step-back font-mono" id="back-to-step-1">← BACK</button>
+                    <button type="button" class="btn-step-next" id="goto-step-3">PROCEED TO SUMMARY →</button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- STEP 3: Order Summary & Confirmation -->
+              <div class="booking-step" id="book-step-3">
+                <div class="step-instruct font-mono">STEP 03: EXPEDITION ORDER SUMMARY</div>
+
+                <div class="order-summary-box">
+                  <div class="summary-line">
+                    <span class="sum-key">EXPERIENCE:</span>
+                    <span class="sum-val" id="sum-event-name">MIDNIGHT JAZZ AT THE ATTIC</span>
+                  </div>
+                  <div class="summary-line font-mono">
+                    <span class="sum-key">PASS TYPE:</span>
+                    <span class="sum-val" id="sum-pass-type">GENERAL ADMISSION (×1)</span>
+                  </div>
+                  <div class="summary-line font-mono">
+                    <span class="sum-key">DATE &amp; TIME:</span>
+                    <span class="sum-val" id="sum-pass-date">08 NOV 2026 · 08:30 PM</span>
+                  </div>
+                  <div class="summary-line font-mono">
+                    <span class="sum-key">BASE SUBTOTAL:</span>
+                    <span class="sum-val" id="sum-subtotal">₹899</span>
+                  </div>
+                  <div class="summary-line font-mono">
+                    <span class="sum-key">CULTURAL PRESERVATION FEE (5%):</span>
+                    <span class="sum-val" id="sum-fee">₹45</span>
+                  </div>
+                  <div class="summary-divider"></div>
+                  <div class="summary-line total-line font-mono">
+                    <span class="sum-total-key">TOTAL AMOUNT DUE:</span>
+                    <span class="sum-total-val" id="sum-total">₹944</span>
+                  </div>
+                </div>
+
+                <div class="simulated-payment-note font-mono">
+                  <span>🔒 SIMULATED COLLEGE SHOWCASE CHECKOUT — NO REAL CARD CHARGED</span>
+                </div>
+
+                <div class="step-buttons-row">
+                  <button type="button" class="btn-step-back font-mono" id="back-to-step-2">← BACK</button>
+                  <button type="button" class="btn-confirm-checkout" id="btn-confirm-booking">
+                    CONFIRM BOOKING &amp; ISSUE PASSPORT STAMP
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 4: SUCCESS / ISSUED TICKET PASS -->
+              <div class="booking-step" id="book-step-success">
+                
+                <div class="success-ticket-card">
+                  <div class="ticket-header-strip">
+                    <span class="ticket-status-badge font-mono">● BOOKING CONFIRMED &amp; REGISTERED</span>
+                    <span class="ticket-id font-mono" id="ticket-generated-id">LMR-89241</span>
+                  </div>
+
+                  <div class="ticket-body-content">
+                    <div class="ticket-main-info">
+                      <span class="ticket-city-label font-mono" id="ticket-city-coord">CHANDIGARH · 30.7333° N</span>
+                      <h3 class="ticket-event-heading" id="ticket-event-title">MIDNIGHT JAZZ AT THE ATTIC</h3>
+                      
+                      <div class="ticket-details-grid font-mono">
+                        <div>
+                          <span class="t-label">ATTENDEE</span>
+                          <span class="t-data" id="ticket-attendee-name">KABIR MEHRA</span>
+                        </div>
+                        <div>
+                          <span class="t-label">PASS TIER</span>
+                          <span class="t-data" id="ticket-pass-tier">PREMIUM FRONT ROW (×1)</span>
+                        </div>
+                        <div>
+                          <span class="t-label">DATE &amp; DOORS</span>
+                          <span class="t-data" id="ticket-date-time">08 NOV 2026 · 08:30 PM</span>
+                        </div>
+                        <div>
+                          <span class="t-label">TOTAL PAID</span>
+                          <span class="t-data" id="ticket-total-paid">₹1,574</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Perforated Tear Line -->
+                    <div class="ticket-tear-line" aria-hidden="true">
+                      <div class="tear-notch tear-top"></div>
+                      <div class="tear-dashes"></div>
+                      <div class="tear-notch tear-bottom"></div>
+                    </div>
+
+                    <!-- Ticket Stub QR Section -->
+                    <div class="ticket-qr-stub">
+                      <div class="qr-mockup" aria-hidden="true">
+                        <div class="qr-inner-pattern font-mono">
+                          ■■ ■■■ ■■<br>
+                          ■  ■ ■  ■<br>
+                          ■■ ■■■ ■■<br>
+                          ■■■   ■■■<br>
+                          ■■ ■■■ ■■
+                        </div>
+                      </div>
+                      <div class="barcode-string font-mono">||||| || | |||| |||</div>
+                      <span class="scan-instructions font-mono">SHOW AT DOOR FOR INK STAMP</span>
+                    </div>
+                  </div>
+
+                  <!-- Stamped Rubber Ink Animation Badge -->
+                  <div class="issued-rubber-stamp" id="issued-rubber-stamp">
+                    <div class="stamp-seal-circle">
+                      <span>LUMORA VERIFIED</span>
+                      <strong>ATTENDED</strong>
+                      <span class="font-mono">№ 2026</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="success-actions-row">
+                  <button type="button" class="btn-view-passport-jump" id="jump-to-passport-btn">
+                    VIEW MY DIGITAL PASSPORT (NEW STAMP ADDED!) →
+                  </button>
+                  <button type="button" class="btn-close-modal-done" id="btn-done-modal">
+                    CLOSE &amp; CONTINUE BROWSING
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. CREATE EXPERIENCE MODAL (For Community Creators) -->
+  <div class="modal-backdrop" id="create-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="create-modal-title">
+    <div class="modal-window modal-window-creator">
+      <button type="button" class="modal-close-btn" id="create-modal-close" aria-label="Close creator modal">✕</button>
+
+      <div class="creator-modal-body">
+        <span class="modal-pre-tag font-mono">[ CURATOR DISPATCH ]</span>
+        <h2 class="creator-modal-title" id="create-modal-title">PROPOSE A NEW EXPERIENCE</h2>
+        <p class="creator-modal-sub">
+          LUMORA is curated by independent makers, musicians, chefs, and archivists. Tell us about the space, sound, or table you wish to host.
+        </p>
+
+        <form id="creator-proposal-form" onsubmit="return false;">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="c-name" class="form-label font-mono">YOUR FULL NAME</label>
+              <input type="text" id="c-name" class="form-input" placeholder="e.g. Maya Kapoor" required>
+            </div>
+            <div class="form-group">
+              <label for="c-email" class="form-label font-mono">EMAIL ADDRESS</label>
+              <input type="email" id="c-email" class="form-input" placeholder="curator@studio.com" required>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="c-title" class="form-label font-mono">EXPERIENCE TITLE</label>
+              <input type="text" id="c-title" class="form-input" placeholder="e.g. Subterranean Ambient Soundwalk" required>
+            </div>
+            <div class="form-group">
+              <label for="c-city" class="form-label font-mono">CITY BASE</label>
+              <select id="c-city" class="custom-select form-input">
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Amritsar">Amritsar</option>
+                <option value="Other">Other Unlisted City</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="c-category" class="form-label font-mono">DISCIPLINE</label>
+              <select id="c-category" class="custom-select form-input">
+                <option value="Music & Sound">Music &amp; Sound</option>
+                <option value="Art & Design">Art &amp; Design</option>
+                <option value="Culinary">Culinary &amp; Wine</option>
+                <option value="Workshops">Workshops &amp; Craft</option>
+                <option value="Nightlife">Nightlife &amp; Clubs</option>
+                <option value="Culture & Walks">Culture &amp; Walks</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-capacity" class="form-label font-mono">MAX CAPACITY (CAP AT 40 FOR INTIMACY)</label>
+              <input type="number" id="c-capacity" class="form-input" placeholder="e.g. 24" max="40" min="5" value="20">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="c-desc" class="form-label font-mono">NARRATIVE CONCEPT &amp; VENUE DISPATCH</label>
+            <textarea id="c-desc" class="form-textarea" rows="4" placeholder="Describe the physical space, why it's unique, sensory elements, and what attendees will experience..." required></textarea>
+          </div>
+
+          <div class="creator-form-footer">
+            <span class="curator-promise font-mono">WE REVIEW EVERY DISPATCH WITHIN 48 HOURS.</span>
+            <button type="submit" class="btn-submit-proposal" id="submit-proposal-btn">
+              SUBMIT CURATOR PROPOSAL →
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true">
+    <!-- Toasts dynamically appended via JS -->
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
